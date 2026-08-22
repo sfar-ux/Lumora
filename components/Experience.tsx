@@ -8,6 +8,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import StaggeredMenu from "./StaggeredMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,9 +227,22 @@ const LOGO_POSITIONS = [
   { top: "38%", left: "8%" },
 ];
 
+const MENU_ITEMS = [
+  { label: "Services", ariaLabel: "View our services",   link: "#services"  },
+  { label: "Work",     ariaLabel: "View our work",        link: "#work"      },
+  { label: "About",   ariaLabel: "Learn about us",       link: "#philosophy"},
+  { label: "Clients", ariaLabel: "Read client reviews",  link: "/review"    },
+  { label: "Contact", ariaLabel: "Get in touch",         link: "#contact"   },
+];
+
+const SOCIAL_ITEMS = [
+  { label: "GitHub",   link: "https://github.com/sfar-ux/Lumora" },
+  { label: "LinkedIn", link: "#" },
+  { label: "Instagram",link: "#" },
+];
+
 export default function Experience() {
   const root = useRef<HTMLDivElement>(null);
-  const [menu, setMenu] = useState(false);
   const [cursorText, setCursorText] = useState("");
   const cursor = useRef<HTMLDivElement>(null);
 
@@ -295,30 +309,21 @@ export default function Experience() {
     <main ref={root} className="site">
       <div ref={cursor} className={`cursor ${cursorText ? "active" : ""}`}>{cursorText}</div>
 
-      <nav className="nav">
-        <a className="brand" href="#">
-          <Image
-            src="/logo.png"
-            alt="Lumora Logo"
-            width={40}
-            height={40}
-            style={{ objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(100,160,255,0.45))" }}
-            priority
-          />
-          LUMORA<span>°</span>
-        </a>
-        <div className={`nav-links ${menu ? "open" : ""}`}>
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="#philosophy">About</a>
-          <a href="/review">Clients</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <button className="nav-cta" {...cursorHandlers}>START A PROJECT <span>↗</span></button>
-        <button className="menu-btn" onClick={() => setMenu(!menu)} aria-label="Toggle menu">
-          {menu ? "CLOSE" : "MENU"}
-        </button>
-      </nav>
+      <StaggeredMenu
+        isFixed
+        position="right"
+        logoUrl="/logo.png"
+        logoText="LUMORA°"
+        items={MENU_ITEMS}
+        socialItems={SOCIAL_ITEMS}
+        displaySocials
+        displayItemNumbering
+        colors={["#1a0040", "#5227FF"]}
+        accentColor="#5227FF"
+        menuButtonColor="#ffffff"
+        openMenuButtonColor="#ffffff"
+        changeMenuColorOnOpen
+      />
 
       <section className="hero">
         <div className="hero-copy">
