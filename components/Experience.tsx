@@ -524,7 +524,7 @@ export default function Experience() {
         <div className="final-no">07 / NEXT</div>
         <p className="eyebrow">LET&apos;S BUILD TOGETHER</p>
         <h2>READY TO<br /><em>LAUNCH</em><br />YOUR SAAS?</h2>
-        <a className="final-cta" href="mailto:hello@lumora.example" {...cursorHandlers}>START A PROJECT <span>↗</span></a>
+        <a className="final-cta" href="mailto:lumora.co.live@gmail.com?subject=New%20Project%20Inquiry&body=Name%3A%0A%0APhone%20Number%3A%0A%0ACompany%2FOrganization%3A%0A%0AProject%20Requirements%20%26%20Details%3A%0A%0ATimeline%3A%0A" {...cursorHandlers}>CONTACT US <span>↗</span></a>
         <footer>
           <span>LUMORA° — SAAS DEVELOPMENT STUDIO</span>
           <span>© 2026</span>
