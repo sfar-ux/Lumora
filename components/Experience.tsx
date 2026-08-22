@@ -539,6 +539,13 @@ export default function Experience() {
           <span>DELHI NCR / INDIA</span>
         </footer>
       </section>
+
+      <a href="#contact" className="floating-contact-btn" aria-label="Contact Us">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Let's Talk</span>
+      </a>
     </main>
   );
 }
