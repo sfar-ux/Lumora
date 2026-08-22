@@ -179,7 +179,17 @@ const projects = [
     tools: "React · Node · Vercel",
     url: "https://soleva-frontend.vercel.app/",
     img: "/proj-soleva.png",
-    accent: "#FFD700",
+    accent: "#ff0066",
+  },
+  {
+    num: "06",
+    tag: "FITNESS PLATFORM",
+    title: "Gym Lumora — Fitness Studio",
+    desc: "A sleek, high-energy landing page and platform for a modern fitness center.",
+    tools: "React · CSS · Vercel",
+    url: "https://gym-lumora-oll4-silk.vercel.app/",
+    img: "/proj-gym.png",
+    accent: "#00ffcc",
   },
 ];
 
@@ -239,7 +249,7 @@ const MENU_ITEMS = [
 const SOCIAL_ITEMS = [
   { label: "GitHub",   link: "https://github.com/sfar-ux/Lumora" },
   { label: "LinkedIn", link: "#" },
-  { label: "Instagram",link: "#" },
+  { label: "Instagram",link: "https://www.instagram.com/lumora.co.live/" },
 ];
 
 export default function Experience() {
