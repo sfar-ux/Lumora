@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ── Root ────────────────────────────────────────────── */
+.rv-root {
+  min-height: 100vh;
+  background: #080808;
+  color: #f2f1eb;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* ── Nav ─────────────────────────────────────────────── */
+.rv-nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 50;
+  height: 76px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.rv-brand {
+  font-weight: 700; font-size: 18px; letter-spacing: -.04em;
+  text-decoration: none; color: #f2f1eb;
+}
+.rv-brand span {
+  background: linear-gradient(135deg, #00aaff, #cc00ff, #ff6600);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.rv-nav-label {
+  font: 10px "DM Mono"; letter-spacing: .14em; opacity: .5; text-transform: uppercase;
+}
+.rv-nav-cta {
+  font: 11px "DM Mono"; letter-spacing: .08em; text-decoration: none;
+  color: #f2f1eb; border: 1px solid rgba(255,255,255,.25); padding: 9px 16px;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.rv-nav-cta:hover {
+  background: linear-gradient(135deg, #00aaff, #cc00ff, #ff6600);
+  color: #fff; border-color: transparent;
+}
+
+/* ── Hero ────────────────────────────────────────────── */
+.rv-hero {
+  position: relative; min-height: 72vh; display: flex; flex-direction: column;
+  justify-content: center; padding: 140px 7vw 80px;
+  overflow: hidden;
+}
+.rv-hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(0,100,255,.09), transparent 70%),
+              radial-gradient(ellipse 50% 40% at 20% 70%, rgba(200,0,255,.07), transparent 70%);
+}
+.rv-eyebrow {
+  font: 10px "DM Mono"; letter-spacing: .16em; text-transform: uppercase;
+  opacity: .55; margin-bottom: 18px;
+}
+.rv-hero-h1 {
+  font-size: clamp(64px, 10vw, 160px); font-weight: 700;
+  line-height: .82; letter-spacing: -.07em; margin: 0 0 50px;
+}
+.rv-hero-h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #00aaff 0%, #cc00ff 50%, #ff6600 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Stats bar ───────────────────────────────────────── */
+.rv-stats {
+  display: flex; align-items: center; gap: 40px;
+  border: 1px solid rgba(255,255,255,.1); border-radius: 16px;
+  padding: 28px 40px; width: max-content; max-width: 100%;
+  background: rgba(255,255,255,.03); backdrop-filter: blur(8px);
+}
+.rv-stat { display: flex; flex-direction: column; gap: 5px; }
+.rv-stat-num {
+  font-size: 42px; font-weight: 700; letter-spacing: -.05em; line-height: 1;
+  background: linear-gradient(135deg, #00aaff, #cc00ff, #ff6600);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.rv-stat-label { font: 10px "DM Mono"; letter-spacing: .1em; opacity: .5; text-transform: uppercase; }
+.rv-stat-sep { width: 1px; height: 60px; background: rgba(255,255,255,.12); }
+
+/* ── Stars ───────────────────────────────────────────── */
+.rv-stars { display: flex; gap: 3px; }
+.rv-star { font-size: 18px; color: rgba(255,255,255,.18); transition: color .15s; }
+.rv-star.filled {
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Grid section ────────────────────────────────────── */
+.rv-grid-section { padding: 80px 5vw 100px; }
+.rv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.rv-card {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px; padding: 30px;
+  display: flex; flex-direction: column; gap: 18px;
+  transition: border-color .3s, background .3s, transform .3s;
+}
+.rv-card:hover {
+  border-color: rgba(150,80,255,.4);
+  background: rgba(255,255,255,.055);
+  transform: translateY(-4px);
+}
+.rv-card-top { display: flex; align-items: center; gap: 14px; }
+.rv-avatar {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  display: grid; place-items: center;
+  font: 700 14px "DM Mono"; color: #fff;
+}
+.rv-name { font-weight: 600; font-size: 15px; margin: 0 0 3px; }
+.rv-program { font: 10px "DM Mono"; opacity: .5; margin: 0; letter-spacing: .06em; }
+.rv-card-top .rv-stars { margin-left: auto; }
+.rv-card-top .rv-star { font-size: 15px; }
+.rv-text {
+  font-size: 14px; line-height: 1.65; color: #c8c7c0;
+  margin: 0; font-style: italic;
+}
+
+/* ── Form section ────────────────────────────────────── */
+.rv-form-section {
+  padding: 80px 5vw 120px;
+  background: linear-gradient(180deg, #080808 0%, #0a0015 50%, #0f0500 100%);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.rv-form-inner { max-width: 760px; }
+.rv-form-h2 {
+  font-size: clamp(48px, 7vw, 110px); font-weight: 700;
+  line-height: .84; letter-spacing: -.07em; margin: 12px 0 50px;
+}
+.rv-form-h2 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #00aaff 0%, #cc00ff 50%, #ff6600 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Form fields ─────────────────────────────────────── */
+.rv-form { display: flex; flex-direction: column; gap: 28px; }
+.rv-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.rv-field { display: flex; flex-direction: column; gap: 9px; position: relative; }
+.rv-field label { font: 500 10px "DM Mono"; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+.rv-field input,
+.rv-field select,
+.rv-field textarea {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  color: #f2f1eb;
+  font: 15px "Space Grotesk";
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color .25s, background .25s;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.rv-field input::placeholder,
+.rv-field textarea::placeholder { color: rgba(255,255,255,.25); }
+.rv-field input:focus,
+.rv-field select:focus,
+.rv-field textarea:focus {
+  border-color: #9933ff;
+  background: rgba(153,51,255,.06);
+}
+.rv-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+.rv-field select option { background: #111; }
+.rv-char {
+  position: absolute; bottom: 12px; right: 14px;
+  font: 10px "DM Mono"; opacity: .35;
+}
+.rv-field .rv-stars { margin-top: 4px; }
+.rv-field .rv-star { font-size: 28px; }
+
+/* ── Form feedback ───────────────────────────────────── */
+.rv-error {
+  font: 12px "DM Mono"; letter-spacing: .06em;
+  color: #ff4466; margin: 0;
+  padding: 12px 16px; border: 1px solid rgba(255,68,102,.3);
+  border-radius: 8px; background: rgba(255,68,102,.06);
+}
+.rv-success {
+  font: 12px "DM Mono"; letter-spacing: .08em;
+  color: #00ffaa; margin-bottom: 10px;
+  padding: 14px 18px; border: 1px solid rgba(0,255,170,.25);
+  border-radius: 8px; background: rgba(0,255,170,.05);
+  animation: fadeIn .4s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ── Submit button ───────────────────────────────────── */
+.rv-submit {
+  display: inline-flex; align-items: center; gap: 16px;
+  width: max-content;
+  background: none;
+  border: 1px solid rgba(255,255,255,.25);
+  color: #f2f1eb;
+  font: 11px "DM Mono"; letter-spacing: .1em; text-transform: uppercase;
+  padding: 18px 28px; cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.rv-submit span { font-size: 18px; }
+.rv-submit:hover {
+  background: linear-gradient(135deg, #00aaff, #cc00ff, #ff6600);
+  border-color: transparent; color: #fff;
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.rv-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 5vw;
+  border-top: 1px solid rgba(255,255,255,.06);
+  font: 10px "DM Mono"; letter-spacing: .08em; opacity: .45;
+}
+.rv-footer a { color: inherit; text-decoration: none; }
+.rv-footer a:hover { opacity: .7; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rv-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .rv-grid { grid-template-columns: 1fr; }
+  .rv-form-row { grid-template-columns: 1fr; }
+  .rv-stats { gap: 22px; padding: 20px 24px; }
+  .rv-stat-num { font-size: 32px; }
+  .rv-nav-label { display: none; }
+}
