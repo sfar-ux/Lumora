@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import StaggeredMenu from "./StaggeredMenu";
+import ContactForm from "./ContactForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -522,9 +523,16 @@ export default function Experience() {
 
       <section id="contact" className="final">
         <div className="final-no">07 / NEXT</div>
-        <p className="eyebrow">LET&apos;S BUILD TOGETHER</p>
-        <h2>READY TO<br /><em>LAUNCH</em><br />YOUR SAAS?</h2>
-        <a className="final-cta" href="mailto:lumora.co.live@gmail.com?subject=New%20Project%20Inquiry&body=Name%3A%0A%0APhone%20Number%3A%0A%0ACompany%2FOrganization%3A%0A%0AProject%20Requirements%20%26%20Details%3A%0A%0ATimeline%3A%0A" {...cursorHandlers}>CONTACT US <span>↗</span></a>
+        <div className="final-content-wrapper">
+          <div className="final-text reveal">
+            <p className="eyebrow">LET&apos;S BUILD TOGETHER</p>
+            <h2>READY TO<br /><em>LAUNCH</em><br />YOUR SAAS?</h2>
+            <p className="final-desc">Tell us about your project requirements, timeline, and goals. We will get back to you within 24 hours.</p>
+          </div>
+          <div className="final-form-container reveal">
+            <ContactForm />
+          </div>
+        </div>
         <footer>
           <span>LUMORA° — SAAS DEVELOPMENT STUDIO</span>
           <span>© 2026</span>

@@ -1056,9 +1056,122 @@ em {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.final h2 {
-  font-size: clamp(70px, 12vw, 190px);
-  margin: 25px 0 50px;
+.final-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.final-text h2 {
+  font-size: clamp(50px, 9vw, 130px);
+  margin: 15px 0 25px;
+  line-height: 0.95;
+}
+
+.final-desc {
+  color: #aaa;
+  font-size: clamp(14px, 1.5vw, 18px);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.final-form-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font: 11px "DM Mono";
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #5227FF;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: #ff4a4a;
+  font-size: 13px;
+  text-align: center;
+}
+
+.contact-form-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  font-size: 40px;
+  color: #00ED64;
+  margin-bottom: 20px;
+}
+
+.contact-form-success h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-form-success p {
+  color: #aaa;
+  margin-bottom: 30px;
 }
 
 .final-cta {
@@ -1077,7 +1190,7 @@ em {
 }
 
 .final-cta span {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 footer {
@@ -1196,6 +1309,20 @@ footer {
 
   .philosophy-copy p:last-child {
     margin-left: 0;
+  }
+
+  .final-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 3vh;
+  }
+
+  .final-form-container {
+    padding: 25px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 
   footer {
