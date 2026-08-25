@@ -191,6 +191,16 @@ const projects = [
     img: "/proj-gym.png",
     accent: "#00ffcc",
   },
+  {
+    num: "07",
+    tag: "BAKERY & DESSERTS",
+    title: "Bindi's Cupcakery — Handcrafted Eggless Desserts",
+    desc: "A boutique cloud kitchen showcase featuring 100% eggless handcrafted cupcakes, brownies, and custom celebration cakes in Surat.",
+    tools: "Next.js · Tailwind · Vercel",
+    url: "https://cupcakery-main-3boo.vercel.app/",
+    img: "/proj-cupcakery.png",
+    accent: "#ff66aa",
+  },
 ];
 
 const TECH_LOGOS = [
