@@ -184,7 +184,7 @@ const projects = [
   {
     num: "06",
     tag: "FITNESS PLATFORM",
-    title: "Gym Lumora — Fitness Studio",
+    title: "Gym Lumoro — Fitness Studio",
     desc: "A sleek, high-energy landing page and platform for a modern fitness center.",
     tools: "React · CSS · Vercel",
     url: "https://gym-lumora-oll4-silk.vercel.app/",
@@ -249,17 +249,17 @@ const LOGO_POSITIONS = [
 ];
 
 const MENU_ITEMS = [
-  { label: "Services", ariaLabel: "View our services",   link: "#services"  },
-  { label: "Work",     ariaLabel: "View our work",        link: "#work"      },
-  { label: "About",   ariaLabel: "Learn about us",       link: "#philosophy"},
-  { label: "Clients", ariaLabel: "Read client reviews",  link: "/review"    },
-  { label: "Contact", ariaLabel: "Get in touch",         link: "#contact"   },
+  { label: "Services", ariaLabel: "View our services", link: "#services" },
+  { label: "Work", ariaLabel: "View our work", link: "#work" },
+  { label: "About", ariaLabel: "Learn about us", link: "#philosophy" },
+  { label: "Clients", ariaLabel: "Read client reviews", link: "/review" },
+  { label: "Contact", ariaLabel: "Get in touch", link: "#contact" },
 ];
 
 const SOCIAL_ITEMS = [
-  { label: "GitHub",   link: "https://github.com/sfar-ux/Lumora" },
+  { label: "GitHub", link: "https://github.com/sfar-ux/Lumoro" },
   { label: "LinkedIn", link: "#" },
-  { label: "Instagram",link: "https://www.instagram.com/lumora.co.live/" },
+  { label: "Instagram", link: "https://www.instagram.com/lumoro.co.live/" },
 ];
 
 export default function Experience() {
@@ -306,6 +306,7 @@ export default function Experience() {
           scrollTrigger: { trigger: ".manifesto", start: "top 80%", end: "bottom 20%", scrub: true }
         }
       );
+
     }, root);
 
     const move = (e: MouseEvent) => {
@@ -334,7 +335,7 @@ export default function Experience() {
         isFixed
         position="right"
         logoUrl="/logo.png"
-        logoText="LUMORA°"
+        logoText="LUMORO°"
         items={MENU_ITEMS}
         socialItems={SOCIAL_ITEMS}
         displaySocials
@@ -349,7 +350,7 @@ export default function Experience() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">SAAS DEVELOPMENT STUDIO</p>
-          <h1 className="hero-wordmark">LUMOR<em>A</em></h1>
+          <h1 className="hero-wordmark">LUMOR<em className="hero-o">O</em></h1>
           <div className="hero-tagline-row">
             <span className="tagline-bar left" />
             <p className="hero-tagline">TECHNOLOGY THAT GIVES BUSINESSES<br />A NEW DIGITAL PRESENCE</p>
@@ -420,103 +421,64 @@ export default function Experience() {
         </div>
       </section>
 
-      <section id="work" className="projects section-dark">
+      {/* ── Merged horizontal-scroll project section ── */}
+      <section id="work" className="projects-h section-dark">
         <div className="section-number">04 / WORK</div>
-        <div className="project-title reveal">
+        <div className="proj-h-header reveal">
           <p className="eyebrow">SHIPPED. LIVE. OPEN.</p>
           <h2>LIVE<br /><span>PROJECTS.</span></h2>
         </div>
-        <div className="project-grid-live">
-          {projects.slice(0, 3).map((proj) => (
-            <div className="proj-live-card reveal" key={proj.url} style={{ "--proj-accent": proj.accent } as React.CSSProperties}>
-              {/* Clickable image thumbnail */}
-              <a
-                href={proj.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="proj-thumb-link"
-                aria-label={`Open ${proj.title}`}
+        <div className="proj-h-outer">
+          {/* Track is duplicated for a seamless infinite loop */}
+          <div className="proj-h-track">
+            {[...projects, ...projects].map((proj, i) => (
+              <div
+                className="proj-h-card"
+                key={`${proj.url}-${i}`}
+                style={{ "--proj-accent": proj.accent } as React.CSSProperties}
+                aria-hidden={i >= projects.length ? true : undefined}
               >
-                <div className="proj-thumb">
-                  <Image
-                    src={proj.img}
-                    alt={proj.title}
-                    fill
-                    sizes="(max-width:800px) 100vw, 50vw"
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                    className="proj-thumb-img"
-                  />
-                  <div className="proj-thumb-overlay">
-                    <span className="proj-visit-label">VISIT SITE ↗</span>
+                <a
+                  href={proj.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="proj-thumb-link"
+                  aria-label={`Open ${proj.title}`}
+                  {...cursorHandlers}
+                >
+                  <div className="proj-thumb">
+                    <Image
+                      src={proj.img}
+                      alt={proj.title}
+                      fill
+                      sizes="420px"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                      className="proj-thumb-img"
+                    />
+                    <div className="proj-thumb-overlay">
+                      <span className="proj-visit-label">VISIT SITE ↗</span>
+                    </div>
+                  </div>
+                </a>
+                <div className="proj-info">
+                  <div className="proj-info-top">
+                    <span className="proj-num-badge">{proj.num}</span>
+                    <span className="eyebrow proj-tag-inline">{proj.tag}</span>
+                  </div>
+                  <h3 className="proj-live-title">{proj.title}</h3>
+                  <p className="proj-live-desc">{proj.desc}</p>
+                  <div className="proj-live-footer">
+                    <span className="proj-tools">{proj.tools}</span>
+                    <a href={proj.url} target="_blank" rel="noopener noreferrer" className="proj-cta-link">
+                      Open Project <span>↗</span>
+                    </a>
                   </div>
                 </div>
-              </a>
-              {/* Card info */}
-              <div className="proj-info">
-                <div className="proj-info-top">
-                  <span className="proj-num-badge">{proj.num}</span>
-                  <span className="eyebrow proj-tag-inline">{proj.tag}</span>
-                </div>
-                <h3 className="proj-live-title">{proj.title}</h3>
-                <p className="proj-live-desc">{proj.desc}</p>
-                <div className="proj-live-footer">
-                  <span className="proj-tools">{proj.tools}</span>
-                  <a href={proj.url} target="_blank" rel="noopener noreferrer" className="proj-cta-link">Open Project <span>↗</span></a>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div className="proj-view-all-wrap">
-          <a
-            href="#all-projects"
-            className="proj-view-all-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("all-projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            VIEW ALL {projects.length} PROJECTS <span>↓</span>
-          </a>
-        </div>
-      </section>
-
-      {/* Extended projects */}
-      <section id="all-projects" className="projects section-dark proj-all-section">
-        <div className="section-number">04b / MORE WORK</div>
-        <div className="project-grid-live">
-          {projects.slice(3).map((proj) => (
-            <div className="proj-live-card reveal" key={proj.url} style={{ "--proj-accent": proj.accent } as React.CSSProperties}>
-              <a href={proj.url} target="_blank" rel="noopener noreferrer" className="proj-thumb-link" aria-label={`Open ${proj.title}`}>
-                <div className="proj-thumb">
-                  <Image
-                    src={proj.img}
-                    alt={proj.title}
-                    fill
-                    sizes="(max-width:800px) 100vw, 50vw"
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                    className="proj-thumb-img"
-                  />
-                  <div className="proj-thumb-overlay">
-                    <span className="proj-visit-label">VISIT SITE ↗</span>
-                  </div>
-                </div>
-              </a>
-              <div className="proj-info">
-                <div className="proj-info-top">
-                  <span className="proj-num-badge">{proj.num}</span>
-                  <span className="eyebrow proj-tag-inline">{proj.tag}</span>
-                </div>
-                <h3 className="proj-live-title">{proj.title}</h3>
-                <p className="proj-live-desc">{proj.desc}</p>
-                <div className="proj-live-footer">
-                  <span className="proj-tools">{proj.tools}</span>
-                  <a href={proj.url} target="_blank" rel="noopener noreferrer" className="proj-cta-link">Open Project <span>↗</span></a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className="proj-h-hint">DRAG OR SCROLL TO EXPLORE <span>→</span></div>
       </section>
 
       <section className="journey section-light">
@@ -554,7 +516,7 @@ export default function Experience() {
           </div>
         </div>
         <footer>
-          <span>LUMORA° — SAAS DEVELOPMENT STUDIO</span>
+          <span>LUMORO° — SAAS DEVELOPMENT STUDIO</span>
           <span>© 2026</span>
           <span>DELHI NCR / INDIA</span>
         </footer>

@@ -13,7 +13,7 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/lumora.co.live@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/lumoro.co.live@gmail.com", {
         method: "POST",
         body: formData,
       });
@@ -45,7 +45,7 @@ export default function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       {/* Required for formsubmit to work correctly */}
-      <input type="hidden" name="_subject" value="New Project Inquiry from Lumora Website" />
+      <input type="hidden" name="_subject" value="New Project Inquiry from Lumoro Website" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p className="form-error">Something went wrong. Please try again or email us directly at lumora.co.live@gmail.com</p>
+        <p className="form-error">Something went wrong. Please try again or email us directly at lumoro.co.live@gmail.com</p>
       )}
     </form>
   );

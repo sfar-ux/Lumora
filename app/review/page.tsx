@@ -21,7 +21,7 @@ const SEED_REVIEWS: Review[] = [
     name: "Rohan Verma",
     program: "B2B SaaS",
     rating: 5,
-    text: "Lumora took our fragmented internal tools and rebuilt them as a single, scalable SaaS platform in under 3 months. Our ops team saved 20+ hours a week. The quality of architecture decisions alone was worth every rupee.",
+    text: "Lumoro took our fragmented internal tools and rebuilt them as a single, scalable SaaS platform in under 3 months. Our ops team saved 20+ hours a week. The quality of architecture decisions alone was worth every rupee.",
     date: "July 2026",
     initials: "RV",
     color: "#00aaff",
@@ -31,7 +31,7 @@ const SEED_REVIEWS: Review[] = [
     name: "Ananya Kapoor",
     program: "Fintech",
     rating: 5,
-    text: "We came to Lumora with a complex payments flow and a tight deadline. They didn't just deliver on time — they challenged our assumptions and redesigned the UX in a way that reduced support tickets by 40%. True partners.",
+    text: "We came to Lumoro with a complex payments flow and a tight deadline. They didn't just deliver on time — they challenged our assumptions and redesigned the UX in a way that reduced support tickets by 40%. True partners.",
     date: "June 2026",
     initials: "AK",
     color: "#cc00ff",
@@ -41,7 +41,7 @@ const SEED_REVIEWS: Review[] = [
     name: "Vikram Sethi",
     program: "Enterprise",
     rating: 5,
-    text: "We'd failed with two other vendors before Lumora. The difference is that they actually understand SaaS from a business standpoint, not just a technical one. Our enterprise CRM now processes 10k+ records daily without issues.",
+    text: "We'd failed with two other vendors before Lumoro. The difference is that they actually understand SaaS from a business standpoint, not just a technical one. Our enterprise CRM now processes 10k+ records daily without issues.",
     date: "May 2026",
     initials: "VS",
     color: "#ff6600",
@@ -61,7 +61,7 @@ const SEED_REVIEWS: Review[] = [
     name: "Siddharth Rao",
     program: "E-commerce",
     rating: 5,
-    text: "Lumora redesigned our entire checkout and subscription billing system. Conversion rate went up 31% within the first month post-launch. They care about the outcome, not just the deliverable.",
+    text: "Lumoro redesigned our entire checkout and subscription billing system. Conversion rate went up 31% within the first month post-launch. They care about the outcome, not just the deliverable.",
     date: "August 2026",
     initials: "SR",
     color: "#00ccaa",
@@ -71,7 +71,7 @@ const SEED_REVIEWS: Review[] = [
     name: "Divya Malhotra",
     program: "EdTech",
     rating: 4,
-    text: "Working with Lumora felt like having an in-house product team without the overhead. They asked the right questions before writing a single line of code. The architecture they designed is something we can scale confidently.",
+    text: "Working with Lumoro felt like having an in-house product team without the overhead. They asked the right questions before writing a single line of code. The architecture they designed is something we can scale confidently.",
     date: "June 2026",
     initials: "DM",
     color: "#ffcc00",
@@ -125,7 +125,7 @@ export default function ReviewPage() {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("lumora_reviews");
+      const saved = localStorage.getItem("lumoro_reviews");
       if (saved) {
         const parsed: Review[] = JSON.parse(saved);
         setReviews([...SEED_REVIEWS, ...parsed]);
@@ -158,8 +158,8 @@ export default function ReviewPage() {
     };
 
     try {
-      const existing = JSON.parse(localStorage.getItem("lumora_reviews") || "[]");
-      localStorage.setItem("lumora_reviews", JSON.stringify([...existing, newReview]));
+      const existing = JSON.parse(localStorage.getItem("lumoro_reviews") || "[]");
+      localStorage.setItem("lumoro_reviews", JSON.stringify([...existing, newReview]));
     } catch { /* ignore */ }
 
     setReviews((prev) => [...prev, newReview]);
@@ -260,7 +260,7 @@ export default function ReviewPage() {
               <label htmlFor="rv-text">Your Review</label>
               <textarea
                 id="rv-text"
-                placeholder="Tell us about your experience at Lumora..."
+                placeholder="Tell us about your experience at Lumoro..."
                 rows={5}
                 value={form.text}
                 onChange={(e) => setForm({ ...form, text: e.target.value })}
@@ -279,8 +279,8 @@ export default function ReviewPage() {
       </section>
 
       <footer className="rv-footer">
-        <Link href="/">← Back to Lumora°</Link>
-        <span>© 2026 LUMORA — FUTURE UNIVERSITY</span>
+        <Link href="/">← Back to Lumoro°</Link>
+        <span>© 2026 LUMORO — FUTURE UNIVERSITY</span>
       </footer>
     </main>
   );

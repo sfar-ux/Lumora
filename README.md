@@ -1,4 +1,4 @@
-# Lumora — Immersive University V1
+# Lumoro — Immersive University V1
 
 An original, Zero-University-inspired immersive education landing page.
 

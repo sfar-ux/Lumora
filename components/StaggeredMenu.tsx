@@ -283,10 +283,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
       {/* Header bar */}
       <header className="staggered-menu-header" aria-label="Main navigation header">
-        <a className="sm-logo" href="#" aria-label="Lumora home">
+        <a className="sm-logo" href="#" aria-label="Lumoro home">
           <Image
             src={logoUrl}
-            alt="Lumora Logo"
+            alt="Lumoro Logo"
             width={40}
             height={40}
             className="sm-logo-img"

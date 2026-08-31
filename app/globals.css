@@ -367,21 +367,24 @@ button {
   opacity: .62;
 }
 
+/* ── Hero Wordmark ────────────────────────── */
 .hero-wordmark {
-  font-size: clamp(64px, 12vw, 195px);
-  line-height: .82;
-  letter-spacing: -.05em;
-  margin: 30px 0 22px;
+  font-size: clamp(56px, 11vw, 180px);
+  line-height: .86;
+  letter-spacing: .08em;
+  margin: 28px 0 22px;
   font-weight: 700;
+  color: #ffffff;
 }
 
-.hero-wordmark em {
+/* Orange "O" */
+.hero-o {
   font-style: normal;
-  background: linear-gradient(135deg, #ff8c00 30%, #ff4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-text-fill-color: #ff8c00;
+  color: #ff8c00;
 }
+
+
 
 em {
   font-style: normal;
@@ -797,12 +800,121 @@ em {
   font-size: 28px;
 }
 
+/* ── Horizontal Projects Section — Infinite Marquee ─ */
+.projects-h {
+  position: relative;
+  padding: 80px 0 60px;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.proj-h-header {
+  padding: 0 7vw 48px;
+}
+
+.proj-h-header h2 {
+  font-size: clamp(54px, 8.7vw, 140px);
+  line-height: .84;
+  letter-spacing: -.075em;
+  margin: 20px 0 0;
+}
+
+.proj-h-header h2 span {
+  color: #8f8e87;
+}
+
+.proj-h-outer {
+  overflow: hidden;
+  width: 100%;
+  /* pause on hover */
+  cursor: grab;
+}
+
+.proj-h-outer:active {
+  cursor: grabbing;
+}
+
+/* Pause on hover */
+.proj-h-outer:hover .proj-h-track {
+  animation-play-state: paused;
+}
+
+.proj-h-track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+  width: max-content;
+  padding: 12px 24px;
+  /* 7 original + 7 clones = 14 cards; shift by exactly half (7 cards) */
+  animation: proj-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+@keyframes proj-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.proj-h-card {
+  flex: 0 0 380px;
+  height: 420px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .35s, box-shadow .35s, transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.proj-h-card:hover {
+  border-color: var(--proj-accent, #5227FF);
+  box-shadow: 0 0 50px -15px var(--proj-accent, #5227FF);
+  transform: translateY(-6px);
+}
+
+.proj-h-card .proj-thumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.proj-h-card .proj-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 20px 18px;
+}
+
+.proj-h-hint {
+  text-align: center;
+  margin-top: 32px;
+  font: 10px "DM Mono";
+  letter-spacing: .1em;
+  opacity: .4;
+}
+
+.proj-h-hint span {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 8px;
+}
+
+
+
+/* ── Live Projects Grid (kept for reference) ─────── */
 .project-title {
   max-width: 1050px;
   margin: 8vh auto 12vh 0;
 }
 
 /* ── Live Projects Grid ─────────────────────── */
+
 .project-grid-live {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
