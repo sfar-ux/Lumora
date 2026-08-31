@@ -846,8 +846,8 @@ em {
   gap: 24px;
   width: max-content;
   padding: 12px 24px;
-  /* 7 original + 7 clones = 14 cards; shift by exactly half (7 cards) */
-  animation: proj-scroll 35s linear infinite;
+  /* 8 original + 8 clones = 16 cards; shift by exactly half (8 cards) */
+  animation: proj-scroll 40s linear infinite;
   will-change: transform;
 }
 

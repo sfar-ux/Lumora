@@ -201,6 +201,16 @@ const projects = [
     img: "/proj-cupcakery.png",
     accent: "#ff66aa",
   },
+  {
+    num: "08",
+    tag: "LUXURY HOTEL & RETREATS",
+    title: "Aurelia — Hotels & Retreats",
+    desc: "A luxury hospitality platform celebrating Indian heritage, luxury stays, curated experiences, and thoughtful rituals.",
+    tools: "React · Tailwind · Vercel",
+    url: "https://aurelia-luxury-hotel.vercel.app/",
+    img: "/proj-aurelia.png",
+    accent: "#e6b800",
+  },
 ];
 
 const TECH_LOGOS = [
